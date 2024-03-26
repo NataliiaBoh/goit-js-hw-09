@@ -74,6 +74,11 @@ const images = [
 // </a>
 // </li>
 
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const galleryEl = document.querySelector(".gallery");
 galleryEl.insertAdjacentHTML("beforeend", createGallery(images));
 
@@ -100,10 +105,7 @@ galleryEl.style.gap = "24px";
 galleryEl.style.listStyleType = "none";
 
 
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
+
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',

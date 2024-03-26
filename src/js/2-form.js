@@ -2,7 +2,7 @@ const LS_KEY = "feedback-form-state";
 
 
 const formEl = document.querySelector(".feedback-form");
-const inputEmeil = formEl.elements.email;
+const inputEmail = formEl.elements.email;
 const inputMessage = formEl.querySelector("textarea");
 
 
@@ -15,7 +15,7 @@ populateFormEl();
 
 function handleSubmit(event) {
     event.preventDefault();
-    console.log({email: inputEmeil.value.trim(), message: inputMessage.value.trim()});
+    console.log({email: inputEmail.value.trim(), message: inputMessage.value.trim()});
 
     event.currentTarget.reset();
     localStorage.removeItem(LS_KEY)
@@ -23,7 +23,7 @@ function handleSubmit(event) {
         
 
 function handleInput() {
-    const formValues = {email: inputEmeil.value.trim(), message: inputMessage.value.trim()};
+    const formValues = {email: inputEmail.value.trim(), message: inputMessage.value.trim()};
     localStorage.setItem(LS_KEY, JSON.stringify(formValues));
 
 }
@@ -33,7 +33,7 @@ function populateFormEl() {
     const savedValues = localStorage.getItem(LS_KEY);
     if (savedValues) {
             const { email, message } = JSON.parse(savedValues);
-            inputEmeil.value = email;
+            inputEmail.value = email;
             inputMessage.value = message;
 
 }

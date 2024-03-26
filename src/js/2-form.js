@@ -15,10 +15,16 @@ populateFormEl();
 
 function handleSubmit(event) {
     event.preventDefault();
-    console.log({email: inputEmail.value.trim(), message: inputMessage.value.trim()});
+
+    if (inputEmail.value && inputMessage.value) {
+        console.log({email: inputEmail.value.trim(), message: inputMessage.value.trim()});
 
     event.currentTarget.reset();
     localStorage.removeItem(LS_KEY)
+    } else {
+        alert ("All form fields must be filled in")
+    }
+    
 } 
         
 
